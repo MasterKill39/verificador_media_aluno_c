@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main() {
+    while (1) {
+        char NomeAluno[100];
+        float n1, n2, n3, n4, MA;
+
+        printf("Entre com o nome do aluno: ");
+        scanf("%s", NomeAluno);
+
+        printf("Entre com a nota 1: ");
+        scanf("%f", &n1);
+
+        printf("Entre com a nota 2: ");
+        scanf("%f", &n2);
+
+        printf("Entre com a nota 3: ");
+        scanf("%f", &n3);
+
+        printf("Entre com a nota 4: ");
+        scanf("%f", &n4);
+
+        MA = (n1 + n2 + n3 + n4) / 4;
+        printf("A sua nota final foi %.2f\n", MA);
+
+        if (MA <= 5.9) {
+            printf("Voce foi reprovado\n");
+        } else {
+            if (MA >= 6) {
+                printf("Voce foi aprovado\n");
+                char op;
+
+                printf("Mais aluno(s) (S/N): ");
+                scanf(" %c", &op);
+
+                if (op == 'S' || op == 's') {
+                    continue;
+                } else {
+                    break;
+                }
+            }
+        }
+    }
+
+    printf("Fim da media\n");
+
+    return 0;
+}
